@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+    --primary: yellow;
+      --secondary: black;
+
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -31,3 +34,13 @@ body {
     text-wrap: balance;
   }
 }
+@tailwind base;
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+@tailwind components;
+@tailwind utilities;
