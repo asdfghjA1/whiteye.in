@@ -15,7 +15,7 @@ export default function GridBackgroundDemo() {
     </>
   );
 }
-export const buttons = [
+const buttons = [
   {
     name: "Img Gen site link",
     description: "Just a button to link this to image generation website i made",
