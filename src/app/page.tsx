@@ -50,7 +50,7 @@ export const buttons = [
 ];
 
 
-export function AuroraBackgroundDemo() {
+function AuroraBackgroundDemo() {
   return (
     <AuroraBackground>
       <motion.div
