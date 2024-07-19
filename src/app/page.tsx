@@ -67,7 +67,7 @@ function AuroraBackgroundDemo() {
           We are under maintainance.
         </div>
         <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          And this may take some time because my fucking exams are going onn <br />
+          And this may take some time because my ducking exams are going onn <br />
           <div className="font-medium dark:text-white text-center">So in the meanwhile why not try this cool stuff that i made</div>  
         </div>
           <a href="https://img.whiteye.in/">
