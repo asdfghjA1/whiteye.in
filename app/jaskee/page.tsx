@@ -11,10 +11,15 @@ interface Feedback {
 
 const FeedbackCard: React.FC<Feedback> = ({ id, username, rating }) => {
   return (
-    <div className="bg-gray-800 shadow-md rounded-lg p-4 text-white">
-      <h2 className="text-xl font-semibold">{username || "missing"}</h2>
-      <p className="text-sm text-gray-400">Feedback ID: {id}</p>
-      <p className="mt-2">Rating: <span className="text-yellow-400">{rating || "missing"}</span></p>
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 shadow-lg rounded-2xl p-6 text-white transform hover:scale-105 transition-all duration-300 border border-gray-700 smooth-edges">
+      <h2 className="text-2xl font-bold mb-2">{username || "Anonymous"}</h2>
+      <p className="text-sm text-gray-400 mb-4">Feedback ID: {id}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-lg">Rating:</p>
+        <span className="text-yellow-400 text-xl font-semibold bg-gray-950 px-3 py-1 rounded-full">
+          {rating || "N/A"}
+        </span>
+      </div>
     </div>
   );
 };
@@ -39,13 +44,13 @@ export default function JaskeePage() {
   }, []);
 
   if (isLoading) {
-    return <div className="text-white">Loading...</div>;
+    return <div className="text-white text-2xl font-bold animate-pulse">Loading...</div>;
   }
 
   return (
-    <div className="container mx-auto p-4 bg-gray-900 text-white">
-      <h1 className="text-2xl font-bold mb-4">All Feedbacks</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="container mx-auto p-8 bg-black text-white min-h-screen">
+      <h1 className="text-4xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700">All Feedbacks</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {feedbacks.map((feedback) => (
           <FeedbackCard key={feedback.id} {...feedback} />
         ))}
