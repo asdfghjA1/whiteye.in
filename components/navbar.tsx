@@ -14,30 +14,6 @@ import { Toggle } from "@/components/ui/toggle"
 import { ThemeProvider, useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import { Moon, Sun } from "lucide-react"
-
-const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
-
-  return (
-    <Toggle
-      aria-label="Toggle theme"
-      pressed={theme === "light"}
-      onPressedChange={(pressed) => setTheme(pressed ? "light" : "dark")}
-    >
-      {theme === "light" ? <Sun className="h-[1.2rem] w-[1.2rem]" /> : <Moon className="h-[1.2rem] w-[1.2rem]" />}
-    </Toggle>
-  )
-}
-
 export function Navbar() {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark">
@@ -101,7 +77,6 @@ export function Navbar() {
           </NavigationMenu>
 
           <div className="flex items-center space-x-4">
-            <ThemeSwitcher />
             {/* <Button>Sign In</Button> */}
           </div>
         </div>
