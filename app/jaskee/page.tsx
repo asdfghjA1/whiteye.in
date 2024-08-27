@@ -26,7 +26,7 @@ export default function JaskeePage() {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/pages/api/feedbacks");
+        const response = await axios.get("/pages/api/feedbacks");
         setFeedbacks(response.data);
       } catch (error) {
         console.error("Error fetching feedbacks:", error);
