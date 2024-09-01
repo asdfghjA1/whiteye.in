@@ -1,7 +1,14 @@
-"use client"
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
@@ -18,28 +25,33 @@ import {
 const projects = [
   {
     title: "Public News Net",
-    description: "This is a test description for Public News Net. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUPoKQ22LfSLNq2AmIU4iUns5FRcIEtYD05g&s",
+    description:
+      "This is a test description for Public News Net. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUPoKQ22LfSLNq2AmIU4iUns5FRcIEtYD05g&s",
     link: "https://github.com/asdfghjA1/BOBO",
     offline: true,
-    offlineMessage: "This project is offline and has been discontinued."
+    offlineMessage: "This project is offline and has been discontinued.",
   },
   {
     title: "AI Image Generator",
-    description: "Test description for AI Image Generator. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description:
+      "Test description for AI Image Generator. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "/generated-image.png",
-    link: "https://img.whiteye.in/"
+    link: "https://img.whiteye.in/",
   },
   {
     title: "Youtube Automation Bot",
-    description: "Random test text for Youtube Automation Bot. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    multipleSender : true ,
-    multipleSenderMessage : "Do you wana go to the youtube channel or the github page",
-    image: "https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500",
+    description:
+      "Random test text for Youtube Automation Bot. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    multipleSender: true,
+    multipleSenderMessage:
+      "Do you wana go to the youtube channel or the github page",
+    image:
+      "https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500",
     link1: "https://www.youtube.com/@WallmartBag-p2b",
-    link2: "https://github.com/asdfghjA1/m5-automation"
-
-  }
+    link2: "https://github.com/asdfghjA1/m5-automation",
+  },
 ];
 
 export default function Projects() {
@@ -51,78 +63,77 @@ export default function Projects() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <Card key={index} className="flex flex-col">
-          <CardHeader className="flex-shrink-0">
-            <CardTitle className="text-lg font-medium">
-              {project.title}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex-grow flex flex-col">
-            <div className="relative aspect-[16/9] mb-4 flex-shrink-0">
-              <Image
-                src={project.image}
-                alt={project.title}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-md"
-              />
-            </div>
-            <p className="text-base text-muted-foreground mb-4">
-              {project.description}
-            </p>
-          </CardContent>
-          <CardFooter className="mt-auto">
-            {project.offline ? (
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button className="w-full">View Project</Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Project Offline</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      {project.offlineMessage}
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction asChild>
-                      <Link href={project.link}>Continue to GitHub</Link>
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            ) : project.multipleSender ? (
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button className="w-full">View Project</Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Multiple Senders</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      {project.multipleSenderMessage}
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction asChild>
-                      <Link href={project.link1}>Youtube Channel</Link>
-                    </AlertDialogAction>
-                    
-                    <AlertDialogAction asChild>
-                      <Link href={project.link2}>Continue to GitHub</Link>
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            ) : (
-              <Button asChild className="w-full">
-                <Link href={project.link}>View Project</Link>
-              </Button>
-            )}
-          </CardFooter>
-        </Card>
-        
+            <CardHeader className="flex-shrink-0">
+              <CardTitle className="text-lg font-medium">
+                {project.title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow flex flex-col">
+              <div className="relative aspect-[16/9] mb-4 flex-shrink-0">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-md"
+                />
+              </div>
+              <p className="text-base text-muted-foreground mb-4">
+                {project.description}
+              </p>
+            </CardContent>
+            <CardFooter className="mt-auto">
+              {project.offline ? (
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button className="w-full">View Project</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Project Offline</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        {project.offlineMessage}
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction asChild>
+                        <Link href={project.link}>Continue to GitHub</Link>
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              ) : project.multipleSender ? (
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button className="w-full">View Project</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Multiple Senders</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        {project.multipleSenderMessage}
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction asChild>
+                        <Link href={project.link1}>Youtube Channel</Link>
+                      </AlertDialogAction>
+
+                      <AlertDialogAction asChild>
+                        <Link href={project.link2}>Continue to GitHub</Link>
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              ) : (
+                <Button asChild className="w-full">
+                  <Link href={project.link || "#"}>View Project</Link>
+                </Button>
+              )}
+            </CardFooter>
+          </Card>
         ))}
       </div>
     </div>
