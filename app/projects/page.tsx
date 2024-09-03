@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Youtube Automation Bot",
     description:
-      "Random test text for Youtube Automation Bot. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "This is a youtube automation bot that scrapes top clips from streaming services and pasturises them to modern BRAINROT content that kids specially in todays day love to watch ",
     multipleSender: true,
     multipleSenderMessage:
       "Do you wana go to the youtube channel or the github page",
