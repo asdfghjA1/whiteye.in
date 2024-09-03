@@ -4,7 +4,6 @@ import Image from "next/image";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -26,7 +25,7 @@ const projects = [
   {
     title: "Public News Net",
     description:
-      "This is a test description for Public News Net. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "This is a reddit structure based project that i made using Ruby on Rails .",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUPoKQ22LfSLNq2AmIU4iUns5FRcIEtYD05g&s",
     link: "https://github.com/asdfghjA1/BOBO",
