@@ -36,7 +36,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <Button asChild variant="ghost" className="w-full justify-start text-lg">
-                    <a href="https://github.com/asdfghjA1">
+                    <a href="https://github.com/maskjelly">
                       <Github className="mr-3 h-5 w-5" />
                       GitHub
                     </a>

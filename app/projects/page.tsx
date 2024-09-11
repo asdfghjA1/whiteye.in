@@ -34,10 +34,19 @@ const projects = [
   },
   {
     title: "AI Image Generator",
-    description:
-      "Test description for AI Image Generator. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "This is just a basic AI image generator .",
     image: "/generated-image.png",
     link: "https://img.whiteye.in/",
+  },
+  {
+    title: "FnBC Agency",
+    description:
+      "This is agency i co-lead with my friends and i work as a lead developer ",
+      Updated: true,
+      UpdatedMessage:
+        "This page is not production ready yet but its good enough for a overview .",
+    image: "/agency.png",
+    link: "https://fnbc.vercel.app",
   },
   {
     title: "Youtube Automation Bot",
@@ -122,6 +131,26 @@ export default function Projects() {
 
                       <AlertDialogAction asChild>
                         <Link href={project.link2}>Continue to GitHub</Link>
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              ) : project.Updated ? (
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button className="w-full">View Project</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Multiple Senders</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        {project.UpdatedMessage}
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction asChild>
+                        <Link href={project.link}>View .</Link>
                       </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
