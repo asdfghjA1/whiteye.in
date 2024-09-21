@@ -42,9 +42,9 @@ const projects = [
     title: "FnBC Agency",
     description:
       "This is agency i co-lead with my friends and i work as a lead developer ",
-      Updated: true,
-      UpdatedMessage:
-        "This page is not production ready yet but its good enough for a overview .",
+    Updated: true,
+    UpdatedMessage:
+      "This page is not production ready yet but its good enough for a overview .",
     image: "/agency.png",
     link: "https://fnbc.vercel.app",
   },
@@ -59,6 +59,17 @@ const projects = [
       "https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500",
     link1: "https://www.youtube.com/@WallmartBag-p2b",
     link2: "https://github.com/asdfghjA1/m5-automation",
+  },
+  {
+    title: "LazyCRM",
+    description:
+      "I have faced issues with clients and freelancers communications not working well as the freelancer has to constantly keep on sending text messages or updates to their clients and their client asking them every now and then about what are they working on and hows everything going in their project , so i have decided to work ont his CRM where clients can come and see what their team is working on and how they are progressing with it everyday - check it out foryourself",
+    lazycrm: true,
+    lazycrmMessage:
+      "This is a new project and is under user waitlist (launching on 28th Sept 2024)",
+    image:
+      "https://lazycrm.xyz/image/favicon.png",
+    link1: "https://lazycrm.xyz"
   },
 ];
 
@@ -151,6 +162,26 @@ export default function Projects() {
                       <AlertDialogCancel>Cancel</AlertDialogCancel>
                       <AlertDialogAction asChild>
                         <Link href={project.link}>View .</Link>
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+              ) : project.lazycrm ? (
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button className="w-full">View Project</Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Under Beta Testing</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        {project.lazycrmMessage}
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction asChild>
+                        <Link href={project.link1}>Join Beta Test users </Link>
                       </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
